@@ -9,6 +9,159 @@ a {
     color: inherit;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Outfit", sans-serif;
+}
+
+
+
+.hero {
+    min-height: 1020px;
+    background-image: url("img/hero_image.jpg");
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right top;
+    display: flex;
+    flex-direction: column;
+
+
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+
+.hero__header {
+    max-width: 1680px;
+    margin: 0;
+    padding: 20px 0 20px 0;
+    position: ;
+    top: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+
+    width: 152px;
+    height: 24px;
+    flex-shrink 0;
+}
+
+
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+
+}
+
+.header__nav-link {
+    color: var(--Secondary, #375360);
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    /* Body M */
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+}
+
+.header__nav-link:hover {
+    text-decoration: underline;
+}
+
+.header__phone {
+    display: flex;
+    align-items: center;
+
+
+    color: #ffffff;
+    text-decoration: none;
+
+
+    padding: 10px 12px;
+    justify-content: center;
+
+    gap: 12px;
+    border-radius: 12px;
+    background: var(--Brand-Primary, #052838);
+}
+
+.header__phone-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.header__phone-text {
+    color: var(--Grayscale-000, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    /* Subtitle */
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    /* 150% */
+}
+
+.hero__content {
+    display: flex;
+    width: 788px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 226px;
+    margin-bottom: 310px;
+}
+
+.hero__title {
+    color: var(--Brand-Primary, #052838);
+
+    /* H1 */
+    font-family: Outfit;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110px;
+    /* 110% */
+    padding-bottom: 20px;
+}
+
+.hero__text {
+    color: var(--Secondary, #375360);
+
+    /* Body XL */
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    /* 160% */
+    align-self: stretch;
+    padding-bottom: 40px;
+}
+
+.hero__button {
+    display: flex;
+    width: 260px;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 12px;
+    background: var(--Brand-Primary, #052838);
+    color: #ffffff;
 }
