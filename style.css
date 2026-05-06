@@ -22,6 +22,7 @@ body {
 
 
 .hero {
+    max-width: 1920px;
     min-height: 1020px;
     background-image: url("img/hero_image.jpg");
 
@@ -29,8 +30,9 @@ body {
     background-repeat: no-repeat;
     background-position: right top;
     display: flex;
-    flex-direction: column;
 
+    flex-direction: column;
+    margin: 0 auto;
 
     padding-left: 120px;
     padding-right: 120px;
@@ -172,16 +174,16 @@ _________________________________________ .about {}
 
 .about__container {
 
-
+    max-width: 1680px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 64px;
-    padding: 120px;
+    padding: 120px 0 120px 0;
 
 }
 
 .about__content {
-    max-width: 740px;
     gap: 28px;
 
 }
@@ -289,19 +291,65 @@ _________________________________________ .about {}
 
 .portfolio__card {
     width: 520px;
+
 }
 
-.card__image {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 10px;
+.card1 {
+
+    display: flex;
+    width: 544px;
+    height: 544px;
+    padding-top: 400px;
+    justify-content: center;
+    align-items: last baseline;
+    border-radius: 12px;
+    background: url(img/Project\ card1.png) lightgray 50% / cover no-repeat;
+
+
 }
+
+.card2 {
+
+    display: flex;
+    width: 544px;
+    height: 544px;
+    padding-top: 400px;
+    justify-content: center;
+    align-items: last baseline;
+    border-radius: 12px;
+    background: url(img/Project\ card2.png) lightgray 50% / cover no-repeat;
+
+
+}
+
+.card3 {
+
+    display: flex;
+    width: 544px;
+    height: 544px;
+    padding-top: 400px;
+    justify-content: center;
+    align-items: last baseline;
+    border-radius: 12px;
+    background: url(img/Project\ card3.png) lightgray 50% / cover no-repeat;
+
+
+}
+
+
+
 
 .card__content {
-    padding: 24px;
-    background-color: #002b3a;
-    border-radius: 0 0 10px 10px;
+    display: flex;
+    width: 544px;
+    height: 144px;
+    padding: 20px 24px 44px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+    background: var(--Brand-Primary, #052838);
+    border-radius: 0 0 12px 12px;
 }
 
 .card__title {
@@ -317,19 +365,22 @@ _________________________________________ .about {}
 }
 
 .portfolio__arrow {
+
+
     position: absolute;
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background-color: #002b3a;
+    border-radius: 100px;
+    background: var(--Brand-Primary, #052838);
 }
 
 .portfolio__arrow--left {
-    left: -70px;
+    left: -32px;
 }
 
 .portfolio__arrow--right {
-    right: -70px;
+    right: -32px;
 }
 
 .portfolio__bottom {
@@ -688,4 +739,94 @@ _________________________________________ .about {}
     height: 380px;
     object-fit: cover;
     border-radius: 12px;
+}
+
+.footer {
+    padding: 80px 0;
+}
+
+.footer__container {
+    max-width: 1680px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.footer__left {
+    max-width: 220px;
+}
+
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #002b3a;
+    text-decoration: none;
+}
+
+.footer__copy {
+    margin: 0 0 30px;
+    font-size: 14px;
+    color: #6b8a96;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 16px;
+}
+
+.footer__social {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #002b3a;
+}
+
+.footer__nav {
+    display: flex;
+    flex-direction: ;
+    gap: 12px;
+}
+
+.footer__link {
+    color: #002b3a;
+    text-decoration: none;
+}
+
+.footer__form-block {
+    max-width: 520px;
+}
+
+.footer__title {
+    margin: 0 0 12px;
+    font-size: 24px;
+    color: #002b3a;
+}
+
+.footer__text {
+    margin: 0 0 20px;
+    color: #294b58;
+}
+
+.footer__form {
+    display: flex;
+    gap: 12px;
+}
+
+.footer__input {
+    flex: 1;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #d5dde1;
+}
+
+.footer__button {
+    padding: 14px 24px;
+    border-radius: 10px;
+    border: none;
+    background-color: #002b3a;
+    color: #fff;
+    cursor: pointer;
 }
