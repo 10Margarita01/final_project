@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <section class="hero">
+    <section class="hero" id="hero">
         <header class="hero__header header">
             <a class="header__logo" href="#">
                 <span class="header__logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="152" height="24"
@@ -49,11 +49,11 @@
             </a>
 
             <nav class="header__nav">
-                <a class="header__nav-link header__nav-link--active" href="#">Main</a>
-                <a class="header__nav-link" href="#">Portfolio</a>
+                <a class="header__nav-link header__nav-link--active" href="#about">Main</a>
+                <a class="header__nav-link" href="#portfolio">Portfolio</a>
                 <a class="header__nav-link" href="#">Price</a>
-                <a class="header__nav-link" href="#">Certifications</a>
-                <a class="header__nav-link" href="#">Contacts</a>
+                <a class="header__nav-link" href="#cert">Certifications</a>
+                <a class="header__nav-link" href="#cta">Contacts</a>
             </nav>
 
             <a class="header__phone" href="tel:+447755555764">
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="about__container">
             <div class="about__content">
                 <h2 class="about__title">About us</h2>
@@ -121,7 +121,7 @@
         </div>
     </section>
 
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="portfolio__container">
 
             <div class="portfolio__top">
@@ -206,14 +206,17 @@
         </div>
     </section>
 
-    <section class="cert">
+    <section class="cert" id="cert">
         <div class="cert__container">
 
             <div class="cert__head">
                 <h2 class="cert__title">Certifications & credentials</h2>
                 <p class="cert__text">
                     We believe great construction starts with strong foundations — not just in buildings, but in
-                    professional standards.
+                    professional standards. Our
+                    team holds industry-recognized certifications that ensure your project meets the highest levels of
+                    safety, quality, and
+                    compliance.
                 </p>
             </div>
 
@@ -312,7 +315,15 @@
 
             </div>
 
-            <a href="#" class="cert__button">View All Certifications</a>
+            <div class="cert__button-wrapper"><a class="button hero__button" href="#">
+                    <span>View Full Portfolio</span>
+
+                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a></div>
 
         </div>
     </section>
@@ -356,15 +367,25 @@
                     </svg></button>
             </div>
 
-            <div class="partners__bottom">
-                <div class="partners__progress">
-                    <span class="partners__count">01/02</span>
-                    <span class="partners__line">
-                        <span class="partners__line-fill"></span>
-                    </span>
+            <div class="portfolio__bottom">
+                <div class="portfolio__pagination">
+                    <span class="portfolio__pagination-number">01/02</span>
+
+                    <span class="portfolio__pagination-line">
+                        <span class="portfolio__pagination-segment portfolio__pagination-segment_active"></span>
+
+                        <span class="portfolio__pagination-segment"></span>
                 </div>
 
-                <a class="partners__button" href="#">View Full Portfolio</a>
+                <div class="portfolio__button_div"><a class="button hero__button" href="#">
+                        <span>View Full Portfolio</span>
+
+                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a></div>
             </div>
 
         </div>
@@ -419,7 +440,7 @@
         </div>
     </section>
 
-    <section class="cta">
+    <section class="cta" id="cta">
         <div class="cta__container">
 
             <div class="cta__content">
@@ -458,7 +479,7 @@
         <div class="footer__container">
 
             <div class="footer__left">
-                <a href="#" class="footer__logo"><svg xmlns="http://www.w3.org/2000/svg" width="152" height="24"
+                <a href="#hero" class="footer__logo"><svg xmlns="http://www.w3.org/2000/svg" width="152" height="24"
                         viewBox="0 0 152 24" fill="none">
                         <path
                             d="M28.9259 22.328V18.912H33.5739C34.4326 18.912 35.1046 18.66 35.5899 18.156C36.0753 17.652 36.3179 17.036 36.3179 16.308C36.3179 15.804 36.2059 15.356 35.9819 14.964C35.7579 14.572 35.4406 14.264 35.0299 14.04C34.6379 13.816 34.1526 13.704 33.5739 13.704H28.9259V10.372H33.2099C33.9379 10.372 34.5259 10.1947 34.9739 9.84C35.4219 9.46667 35.6459 8.90667 35.6459 8.16C35.6459 7.432 35.4219 6.89067 34.9739 6.536C34.5259 6.16267 33.9379 5.976 33.2099 5.976H28.9259V2.56H34.0499C35.3193 2.56 36.3926 2.79333 37.2699 3.26C38.1659 3.72667 38.8473 4.352 39.3139 5.136C39.7806 5.92 40.0139 6.788 40.0139 7.74C40.0139 8.95333 39.6219 9.98 38.8379 10.82C38.0539 11.66 36.8966 12.2387 35.3659 12.556L35.4779 11.072C37.1393 11.3893 38.4179 12.0333 39.3139 13.004C40.2286 13.9747 40.6859 15.1693 40.6859 16.588C40.6859 17.6707 40.4153 18.6507 39.8739 19.528C39.3513 20.3867 38.5859 21.068 37.5779 21.572C36.5886 22.076 35.3939 22.328 33.9939 22.328H28.9259ZM25.5659 22.328V2.56H29.9059V22.328H25.5659Z"
@@ -536,11 +557,11 @@
             </div>
 
             <nav class="footer__nav">
-                <a href="#" class="footer__link">Main</a>
+                <a href="#about" class="footer__link">Main</a>
                 <a href="#" class="footer__link">Price</a>
-                <a href="#" class="footer__link">Contacts</a>
-                <a href="#" class="footer__link">Portfolio</a>
-                <a href="#" class="footer__link">Certifications</a>
+                <a href="#cta" class="footer__link">Contacts</a>
+                <a href="#portfolio" class="footer__link">Portfolio</a>
+                <a href="#cert" class="footer__link">Certifications</a>
             </nav>
 
             <div class="footer__form-block">
