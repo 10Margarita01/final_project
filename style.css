@@ -386,17 +386,19 @@ body {
 
 .portfolio__arrow {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+
     width: 64px;
     height: 64px;
     border-radius: 100px;
     background: var(--Brand-Primary, #052838);
     border: none;
+
     display: flex;
     align-items: center;
     justify-content: center;
-
-    z-index: 5;
-
 }
 
 .portfolio__arrow--left {

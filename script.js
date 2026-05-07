@@ -3,6 +3,7 @@ function initSlider(config) {
     const prevBtn = document.querySelector(config.prev);
     const nextBtn = document.querySelector(config.next);
     const currentNumber = document.querySelector(config.number);
+    const line = document.querySelector(config.line);
     const cards = document.querySelectorAll(config.card);
 
     if (!track || !prevBtn || !nextBtn || !currentNumber || cards.length === 0) return;
@@ -17,10 +18,14 @@ function initSlider(config) {
 
         track.style.transform = `translateX(-${move}px)`;
         currentNumber.textContent = `${String(currentIndex + 1).padStart(2, "0")}/${String(totalSlides).padStart(2, "0")}`;
+
+        if (line) {
+            line.classList.toggle("is-second", currentIndex === 1);
+        }
     }
 
     nextBtn.addEventListener("click", () => {
-        currentIndex = currentIndex + 1;
+        currentIndex++;
 
         if (currentIndex >= totalSlides) {
             currentIndex = 0;
@@ -30,7 +35,7 @@ function initSlider(config) {
     });
 
     prevBtn.addEventListener("click", () => {
-        currentIndex = currentIndex - 1;
+        currentIndex--;
 
         if (currentIndex < 0) {
             currentIndex = totalSlides - 1;
@@ -49,6 +54,7 @@ initSlider({
     prev: ".portfolio__arrow--left",
     next: ".portfolio__arrow--right",
     number: ".portfolio .portfolio__pagination-number",
+    line: ".portfolio .portfolio__pagination-line",
     visibleCards: 3
 });
 
@@ -58,22 +64,25 @@ initSlider({
     prev: ".partners__arrow--left",
     next: ".partners__arrow--right",
     number: ".partners .portfolio__pagination-number",
+    line: ".partners .portfolio__pagination-line",
     visibleCards: 1
 });
-const portfolioSegments = document.querySelectorAll(
-    '.portfolio .portfolio__pagination-segment'
-);
 
-function updatePortfolioPagination(index) {
-    portfolioNumber.textContent = `0${index + 1}/02`;
+const burger = document.querySelector(".header__burger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const closeMenu = document.querySelector(".mobile-menu__close");
+const menuLinks = document.querySelectorAll(".mobile-menu__link");
 
-    portfolioSegments.forEach((segment, i) => {
-        segment.classList.toggle('portfolio__pagination-segment_active', i === index);
+burger?.addEventListener("click", () => {
+    mobileMenu.classList.add("is-open");
+});
+
+closeMenu?.addEventListener("click", () => {
+    mobileMenu.classList.remove("is-open");
+});
+
+menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("is-open");
     });
-}
-const portfolioLine = document.querySelector('.portfolio .portfolio__pagination-line');
-
-function updatePortfolioPagination(index) {
-    portfolioNumber.textContent = `0${index + 1}/02`;
-    portfolioLine.classList.toggle('is-second', index === 1);
-}
+});
