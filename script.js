@@ -6,41 +6,50 @@ function initSlider(config) {
     const line = document.querySelector(config.line);
     const cards = document.querySelectorAll(config.card);
 
-    if (!track || !prevBtn || !nextBtn || !currentNumber || cards.length === 0) return;
+    if (!track || !prevBtn || !nextBtn || !currentNumber || !line || cards.length === 0) return;
 
     let currentIndex = 0;
-    const totalSlides = Math.ceil(cards.length / config.visibleCards);
+
+    function getVisibleCards() {
+        if (window.innerWidth <= 768) return config.mobileVisibleCards;
+        if (window.innerWidth <= 1024) return config.tabletVisibleCards;
+        return config.visibleCards;
+    }
+
+    function getTotalSlides() {
+        return Math.ceil(cards.length / getVisibleCards());
+    }
 
     function updateSlider() {
+        const visibleCards = getVisibleCards();
+        const totalSlides = getTotalSlides();
+
+        if (currentIndex >= totalSlides) {
+            currentIndex = totalSlides - 1;
+        }
+
         const cardWidth = cards[0].offsetWidth;
         const gap = parseInt(getComputedStyle(track).gap) || 0;
-        const move = currentIndex * config.visibleCards * (cardWidth + gap);
+        const move = currentIndex * visibleCards * (cardWidth + gap);
 
         track.style.transform = `translateX(-${move}px)`;
-        currentNumber.textContent = `${String(currentIndex + 1).padStart(2, "0")}/${String(totalSlides).padStart(2, "0")}`;
 
-        if (line) {
-            line.classList.toggle("is-second", currentIndex === 1);
-        }
+        currentNumber.textContent =
+            `${String(currentIndex + 1).padStart(2, "0")}/${String(totalSlides).padStart(2, "0")}`;
+
+        line.style.setProperty("--slide-index", currentIndex);
+        line.style.setProperty("--total-slides", totalSlides);
     }
 
     nextBtn.addEventListener("click", () => {
         currentIndex++;
-
-        if (currentIndex >= totalSlides) {
-            currentIndex = 0;
-        }
-
+        if (currentIndex >= getTotalSlides()) currentIndex = 0;
         updateSlider();
     });
 
     prevBtn.addEventListener("click", () => {
         currentIndex--;
-
-        if (currentIndex < 0) {
-            currentIndex = totalSlides - 1;
-        }
-
+        if (currentIndex < 0) currentIndex = getTotalSlides() - 1;
         updateSlider();
     });
 
@@ -55,7 +64,9 @@ initSlider({
     next: ".portfolio__arrow--right",
     number: ".portfolio .portfolio__pagination-number",
     line: ".portfolio .portfolio__pagination-line",
-    visibleCards: 3
+    visibleCards: 3,
+    tabletVisibleCards: 2,
+    mobileVisibleCards: 1
 });
 
 initSlider({
@@ -65,24 +76,7 @@ initSlider({
     next: ".partners__arrow--right",
     number: ".partners .portfolio__pagination-number",
     line: ".partners .portfolio__pagination-line",
-    visibleCards: 1
-});
-
-const burger = document.querySelector(".header__burger");
-const mobileMenu = document.querySelector(".mobile-menu");
-const closeMenu = document.querySelector(".mobile-menu__close");
-const menuLinks = document.querySelectorAll(".mobile-menu__link");
-
-burger?.addEventListener("click", () => {
-    mobileMenu.classList.add("is-open");
-});
-
-closeMenu?.addEventListener("click", () => {
-    mobileMenu.classList.remove("is-open");
-});
-
-menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        mobileMenu.classList.remove("is-open");
-    });
+    visibleCards: 1,
+    tabletVisibleCards: 1,
+    mobileVisibleCards: 1
 });
