@@ -74,9 +74,11 @@ body {
     color: var(--Brand-Primary, #052838);
 }
 
-.header__nav-link:active {
+.header__nav-link--active {
     text-decoration: underline;
+    text-underline-offset: 4px;
 }
+
 
 .header__phone {
     display: flex;
@@ -686,7 +688,6 @@ body {
     /* 160% */
 }
 
-
 .partners__slider {
     position: relative;
 
@@ -757,7 +758,6 @@ body {
     background: #052838;
     transition: transform 0.4s ease;
 }
-
 
 .faq {
     padding: 120px;
@@ -899,6 +899,17 @@ body {
     gap: 8px;
 }
 
+.cta__input:hover {
+    border-radius: 12px;
+    border: 1px solid var(--Brand-Primary, #052838);
+    background: var(--Brand-Hover, #0C3D54);
+}
+
+.cta__input:active {
+    border-radius: 12px;
+    border: 1px solid var(--Accent, #3F73FF);
+}
+
 .cta__input::placeholder {
     color: var(--Grayscale-400, #999EAD);
 
@@ -1014,6 +1025,14 @@ body {
     fill: var(--Brand-Primary, #052838);
 }
 
+.footer__social svg path {
+    transition: fill 0.2s ease;
+}
+
+.footer__social:hover svg path {
+    fill: #0C3D54;
+}
+
 .footer__nav {
     display: grid;
     grid-template-columns: repeat(3, max-content);
@@ -1031,6 +1050,10 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+}
+
+.footer__link:hover {
+    color: var(--Brand-Primary, #052838);
 }
 
 .footer__form-block {
@@ -1366,7 +1389,6 @@ body {
         width: 100%;
     }
 
-
     .cert__grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1375,7 +1397,6 @@ body {
         grid-template-columns: 1fr;
         gap: 80px;
     }
-
 
     .footer__container {
         flex-direction: column;
@@ -1458,17 +1479,21 @@ body {
     }
 
     .hero {
-        min-height: 640px;
+        min-height: 852px;
         padding-left: 16px;
         padding-right: 16px;
-        padding-bottom: 60px;
+        padding-bottom: 247px;
         background-size: cover;
         background-position: center left;
+        background-image: url("img/bgimage.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right top;
     }
 
     .hero__content {
         max-width: 100%;
-        margin-top: 140px;
+
         margin-bottom: 0;
         align-items: center;
         text-align: center;
@@ -1622,7 +1647,6 @@ body {
         flex-shrink: 0;
     }
 
-
     .cert {
         display: flex;
         flex-direction: column;
@@ -1692,8 +1716,6 @@ body {
         height: 280px;
         border-radius: 12px;
     }
-
-
 
     .partners__viewport {
         overflow-x: auto;
