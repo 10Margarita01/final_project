@@ -10,11 +10,16 @@ function initSlider(config) {
 
     let currentIndex = 0;
 
-    function getVisibleCards() {
-        if (window.innerWidth <= 768) return config.mobileVisibleCards;
-        if (window.innerWidth <= 1024) return config.tabletVisibleCards;
-        return config.visibleCards;
-    }
+   function getVisibleCards() {
+    const viewport = track.parentElement;
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(track).gap) || 0;
+
+    return Math.max(
+        1,
+        Math.round((viewport.offsetWidth + gap) / (cardWidth + gap))
+    );
+}
 
     function getTotalSlides() {
         return Math.ceil(cards.length / getVisibleCards());
@@ -79,4 +84,23 @@ initSlider({
     visibleCards: 1,
     tabletVisibleCards: 1,
     mobileVisibleCards: 1
+});
+
+const burger = document.querySelector(".header__burger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const closeMenu = document.querySelector(".mobile-menu__close");
+const menuLinks = document.querySelectorAll(".mobile-menu__link");
+
+burger?.addEventListener("click", () => {
+    mobileMenu?.classList.add("is-open");
+});
+
+closeMenu?.addEventListener("click", () => {
+    mobileMenu?.classList.remove("is-open");
+});
+
+menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        mobileMenu?.classList.remove("is-open");
+    });
 });

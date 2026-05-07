@@ -532,7 +532,6 @@ body {
     margin: 0 0 4px;
     color: var(--Grayscale-000, #FFF);
     font-feature-settings: 'liga' off, 'clig' off;
-
     /* H4 */
     font-family: Outfit;
     font-size: 24px;
@@ -1189,6 +1188,8 @@ body {
     background: #fff;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .mobile-menu.is-open {
@@ -1233,7 +1234,6 @@ body {
 }
 
 .mobile-menu__phone {
-
     display: flex;
     justify-content: center;
     padding: 16px 24px;
@@ -1242,8 +1242,7 @@ body {
     color: #fff;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 220px;
-    margin-bottom: 40px;
+    margin-top: auto;
 }
 
 @media (max-width: 1024px) {
@@ -1516,16 +1515,40 @@ body {
     .portfolio__title,
     .cert__title,
     .partners__title,
-    .faq__title,
-    .cta__title {
+    .faq__title {
+        color: var(--Brand-Primary, #052838);
+        font-feature-settings: 'liga' off, 'clig' off;
+
+        /* H3 */
+        font-family: Outfit;
         font-size: 32px;
-        line-height: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
-    .about__paragraph,
+    .about__paragraph {
+        color: var(--Secondary, #375360);
+
+        /* Body L */
+        font-family: Outfit;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
+    }
+
     .partners__card-text {
-        font-size: 14px;
-        line-height: 20px;
+        color: var(--Grayscale-300, #D7DAE2);
+
+        /* Body L */
+        font-family: Outfit;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
     }
 
     .portfolio__head,
@@ -1593,7 +1616,7 @@ body {
     .card1,
     .card2,
     .card3 {
-        max-width: 90%;
+        max-width: 94%;
         height: 420px;
         padding-top: 280px;
         flex-shrink: 0;
@@ -1607,6 +1630,30 @@ body {
 
     .cert__head {
         order: 1;
+    }
+
+    .cert__card-title {
+        color: var(--Grayscale-000, #FFF);
+        font-feature-settings: 'liga' off, 'clig' off;
+
+        /* H4 */
+        font-family: Outfit;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .cert__card-text {
+        color: var(--Grayscale-300, #D7DAE2);
+
+        /* Body L */
+        font-family: Outfit;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
     }
 
     .cert__grid-wrapper {
@@ -1662,13 +1709,14 @@ body {
         display: flex;
         gap: 12px;
         width: max-content;
-        transform: none !important;
+        transform: none;
+
     }
 
     .partners__card {
-        width: calc(100vw - 32px);
-        min-width: calc(100vw - 32px);
-        height: 420px;
+        width: 86vw;
+        min-width: 86vw;
+        height: auto;
         flex-shrink: 0;
         overflow: hidden;
         border-radius: 12px;
@@ -1682,19 +1730,33 @@ body {
     }
 
     .partners__content {
-        height: 180px;
-        padding: 20px 24px;
+        min-height: 190px;
+        padding: 20px 20px 28px;
         border-radius: 0 0 12px 12px;
     }
 
     .partners__card-title {
+        color: var(--Grayscale-000, #FFF);
+        font-feature-settings: 'liga' off, 'clig' off;
+
+        /* H4 */
+        font-family: Outfit;
         font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
         line-height: normal;
     }
 
     .partners__card-text {
-        font-size: 14px;
-        line-height: 20px;
+        color: var(--Grayscale-300, #D7DAE2);
+
+        /* Body L */
+        font-family: Outfit;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
     }
 
     .faq__container {
@@ -1707,8 +1769,28 @@ body {
     }
 
     .faq__question {
-        font-size: 14px;
-        line-height: 20px;
+        color: var(--Brand-Primary, #052838);
+        font-feature-settings: 'liga' off, 'clig' off;
+
+        /* Subtitle */
+        font-family: Outfit;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        /* 150% */
+    }
+
+    .faq__answer {
+        color: var(--Secondary, #375360);
+
+        /* Body L */
+        font-family: Outfit;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
     }
 
     .cta__container {
@@ -1722,6 +1804,42 @@ body {
 
     .cta__image-wrapper {
         display: none;
+    }
+
+    .cta__title {
+        color: var(--Grayscale-000, #FFF);
+        font-feature-settings: 'liga' off, 'clig' off;
+
+        /* H3 */
+        font-family: Outfit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .cta__text {
+        color: var(--Grayscale-300, #D7DAE2);
+
+        /* Body L */
+        font-family: Outfit;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
+    }
+
+    .cta__note {
+        color: var(--Grayscale-400, #999EAD);
+
+        /* Body S */
+        font-family: Outfit;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        /* 133.333% */
     }
 
     .footer__container {
@@ -1765,7 +1883,7 @@ body {
         overflow-x: auto;
         overflow-y: hidden;
         scrollbar-width: none;
-        transform: none !important;
+        transform: none;
     }
 
     .portfolio__track::-webkit-scrollbar {
@@ -1780,7 +1898,7 @@ body {
     .card5,
     .card6 {
         width: calc(100vw - 32px);
-        min-width: calc(100vw - 32px);
+
         height: 420px;
         padding-top: 280px;
         flex-shrink: 0;
