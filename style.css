@@ -1713,7 +1713,7 @@ body {
     .cert__card {
         width: 86vw;
         min-width: 86vw;
-        min-width: 368px;
+
         height: 280px;
         border-radius: 12px;
     }
