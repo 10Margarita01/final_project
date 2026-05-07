@@ -1515,7 +1515,7 @@ body {
     .card1,
     .card2,
     .card3 {
-        min-width: 356px;
+        max-width: 90%;
         height: 420px;
         padding-top: 280px;
         flex-shrink: 0;
@@ -1565,6 +1565,7 @@ body {
         width: calc(100vw - 32px);
         min-width: 356px;
         height: 280px;
+        border-radius: 12px;
     }
 
 
